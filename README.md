@@ -3,7 +3,16 @@
 # BACKGROUND
 Seizures occur when groups of neurons in the brain abnormally increase their activity and behave erratically. This can result in convulsive movement, strange behaviors and/or sensations. Individuals experiencing chronic seizures are considered to have epilepsy and require medical treatment. These treatments include surgery, medication and lifestyle changes (Epilepsy and Seizures, 2023). Producing accurate models to detect epilepsy could help these individuals.
 
-Electroencephalogram (EEG) is one of the procedures used to diagnose epilepsy. Neurons function through the controlled movement of ions such as clacium, sodium, potassium and chloride, which produces electrical currents. The EEG device rests on top of the head and uses small electrodes that can detect electrical signals emitted by groups of neurons (Rayi, 2022). The data produced is voltage changes over time. It should be noted that EEG results alone are not enough to diagnose epilepsy, and that an EEG can only detect neuronal activity at the surface layers of the brain, not in deeper structures (Epilepsy and Seizures, 2023).
+Electroencephalogram (EEG) is one of the procedures used to diagnose epilepsy. Neurons function through the controlled movement of ions such as clacium, sodium, potassium and chloride, which produces electrical currents. The EEG device rests on top of the head and uses small electrodes that can detect electrical signals emitted by groups of neurons (Michel & Brunet, 2019). The data produced is voltage changes over time. It should be noted that EEG results alone are not enough to diagnose epilepsy, and that an EEG can only detect neuronal activity at the surface layers of the brain, not in deeper structures (Epilepsy and Seizures, 2023).
+
+# Language
+- Python
+  - [NumPy](https://numpy.org/)
+  - [pandas](https://pandas.pydata.org/)
+  - [Seaborn](https://seaborn.pydata.org/)
+  - [Matplotlib](https://matplotlib.org/)
+  - [Scikit-learn](https://scikit-learn.org/stable/)
+  - [TensorFlow](https://www.tensorflow.org/)
 
 # DATA
 
@@ -29,14 +38,28 @@ y contains the category of the 178-dimensional input vector. Specifically y in {
 
 All subjects falling in classes 2, 3, 4, and 5 are subjects who did not have epileptic seizure. Only subjects in class 1 have epileptic seizure. Our motivation for creating this version of the data was to simplify access to the data via the creation of a .csv version of it. Although there are 5 classes most authors have done binary classification, namely class 1 (Epileptic seizure) against the rest.
 
-## Important Note Regarding This Dataset
-
-Since subject identifiers are not available, samples need to be treated as independent windows.
-
-The data has been processed so 500 subjects × 23 windows resulting in 11500 samles. Therefore, there are multiple entries from the same subject and it is not possilbe to determine which entries are from the same subject. This needs to be kept in mind when deriving any clinical implcations from this work and sub-level sezuire detection cannot be accopmished.  
-
 ## Acknowledgements
 
 Andrzejak RG, Lehnertz K, Rieke C, Mormann F, David P, Elger CE (2001) Indications of nonlinear deterministic and finite dimensional structures in time series of brain electrical activity: Dependence on recording region and brain state, Phys. Rev. E, 64, 061907
 
 The original dataset can be found at the UCI Machine Learning Repository. The dataset used in this project can be found on Kaggle's platform: https://www.kaggle.com/datasets/harunshimanto/epileptic-seizure-recognition
+
+## Important Note Regarding This Dataset
+
+Since subject identifiers are not available, samples need to be treated as independent windows.
+
+The data has been processed so 500 subjects × 23 windows resulting in 11500 samples. Therefore, there are multiple entries from the same subject and it is not possible to determine which entries are from the same subject. This needs to be kept in mind when deriving any clinical implcations from this work and sub-level sezuire detection cannot be accopmished.  
+
+## Data Processing and Normalization
+
+- Initially, this project will treat this as a binary classsifaction model and the four categories without sezuire activity will be collapsed into one category and assigned the label '0' under the 'y' category. The 
+
+- Each 1-second EEG window was independently z-score normalized to remove scale differences. There is a large amount of variablity in EEG recording amplitude that arise from non-neuronal factors such as muscle activity, movement, cardiac pulse, electrode placement and electrode contact (Michel & Brunet, 2019). Therefore, applying normalization techniques such as z-score normalization is apporopriate. 
+
+<img width="1000" height="600" alt="raw_vs_normalized_traces" src="https://github.com/user-attachments/assets/0838094e-3750-431c-b2fa-e65d40352063" />
+
+# References
+
+Epilepsy and Seizures. (2023, August 15). National Institute of Neurological Disorders and Stroke. Retrieved October 11, 2023, from https://www.ninds.nih.gov/health-information/disorders/epilepsy-and-seizures
+
+Michel, M., & Brunet, D. (2019). EEG Source Imaging: A Practical Review of the Analysis Steps. Frontiers in Neurology, 10, 325. https://doi.org/10.3389/fneur.2019.00325
