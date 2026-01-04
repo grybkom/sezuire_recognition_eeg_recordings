@@ -50,6 +50,10 @@ Since subject identifiers are not available, samples are treated as independent 
 
 The data has been processed so 500 subjects × 23 windows resulting in 11500 samples. Therefore, there are multiple entries from the same subject and it is not possible to determine which entries are from the same subject. This needs to be kept in mind when deriving any clinical implications from this work and subject-level sezuire detection cannot be accopmished.  
 
+> ⚠️ **Important Note Regarding This Dataset**  
+> This dataset consists of preprocessed EEG recordings in which the original subject-level structure has been removed.  
+
+
 ## Data Processing and Normalization
 
 - Initially, this project will treat this as a binary classsifaction model and the four categories without sezuire activity will be collapsed into one category and assigned the label '0' under the 'y' category.
