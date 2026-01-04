@@ -30,8 +30,13 @@ y contains the category of the 178-dimensional input vector. Specifically y in {
 
 All subjects falling in classes 2, 3, 4, and 5 are subjects who did not have epileptic seizure. Only subjects in class 1 have epileptic seizure. Our motivation for creating this version of the data was to simplify access to the data via the creation of a .csv version of it. Although there are 5 classes most authors have done binary classification, namely class 1 (Epileptic seizure) against the rest.
 
+**Important Note Regarding This Dataset**
+Since subject identifiers are not available, samples need to be treated as independent windows.
+
+The data has been processed so 500 subjects × 23 windows resulting in 11500 samles. Therefore, there are multiple entries from the same subject and it is not possilbe to determine which entries are from the same subject. This needs to be kept in mind when deriving any clinical implcations from this work and sub-level sezuire detection cannot be accopmished.  
+
 ## Acknowledgements
 
 Andrzejak RG, Lehnertz K, Rieke C, Mormann F, David P, Elger CE (2001) Indications of nonlinear deterministic and finite dimensional structures in time series of brain electrical activity: Dependence on recording region and brain state, Phys. Rev. E, 64, 061907
 
-The original dataset can be found at the UCI Machine Learning Repository. The dataset used in this project can be found on Kaggle's platform: (https://www.kaggle.com/datasets/harunshimanto/epileptic-seizure-recognition)
+The original dataset can be found at the UCI Machine Learning Repository. The dataset used in this project can be found on Kaggle's platform: https://www.kaggle.com/datasets/harunshimanto/epileptic-seizure-recognition
