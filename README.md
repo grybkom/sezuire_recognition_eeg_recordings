@@ -8,7 +8,7 @@ Electroencephalogram (EEG) is one of the procedures used to diagnose epilepsy. N
 
 # DATA
 
-## Attribute Information:
+## Attribute Information
 
 The original dataset from the reference consists of 5 different folders, each with 100 files, with each file representing a single subject/person. Each file is a recording of brain activity for 23.6 seconds. The corresponding time-series is sampled into 4097 data points. Each data point is the value of the EEG recording at a different point in time. So we have total 500 individuals with each has 4097 data points for 23.5 seconds.
 
@@ -30,7 +30,7 @@ y contains the category of the 178-dimensional input vector. Specifically y in {
 
 All subjects falling in classes 2, 3, 4, and 5 are subjects who did not have epileptic seizure. Only subjects in class 1 have epileptic seizure. Our motivation for creating this version of the data was to simplify access to the data via the creation of a .csv version of it. Although there are 5 classes most authors have done binary classification, namely class 1 (Epileptic seizure) against the rest.
 
-**Important Note Regarding This Dataset**
+## Important Note Regarding This Dataset
 
 Since subject identifiers are not available, samples need to be treated as independent windows.
 
