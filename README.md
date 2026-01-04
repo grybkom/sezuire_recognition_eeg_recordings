@@ -1,4 +1,4 @@
-# Models for Sezuire Recognition fro EEG Recordings
+<h1 align="center">Models for Sezuire Recognition from EEG Recordings</h1>
 
 ---
 
