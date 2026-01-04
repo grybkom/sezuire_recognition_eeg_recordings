@@ -54,16 +54,29 @@ The original dataset can be found at the UCI Machine Learning Repository. The da
 > This dataset consists of preprocessed EEG recordings in which the original subject-level structure has been removed.The original data contained recordings from 500 subjects, each segmented into 23 non-overlapping one-second windows, resulting in a total of 11,500 samples. Because explicit subject identifiers are not available, these windows must be treated as independent samples. As a result, multiple samples in the dataset originate from the same individual, but it is not possible to determine which windows belong to which subject. This limitation should be carefully considered when interpreting model performance. Validation results may be optimistic due to potential correlation between samples, and subject-level seizure detection or clinical generalization cannot be reliably assessed using this dataset. Despite these limitations, the dataset is suitable for model development in EEG-based seizure detection.
 
 # Models
-## Convolutional Neural Network (CNN)
-- **Convolutional Layers:** 2 1-dimensional convolutional layers with 32 then 64 units and relu acrivation
+This repository contains two primary modeling approaches applied to the EEG seizure dataset.
+## 1. Convolutional Neural Network (CNN) (Primary Model)
+- Notebook: `eeg_seizure_recognition.ipynb`
+- A supervised learning approach for binary seizure detection using 1D convolutional neural networks.
+- Includes data preprocessing, normalization, model training, evaluation metrics (accuracy, recall, AUC), and error analysis.
+- This notebook represents the most complete and up-to-date modeling work in the repository.
+### CNN Architecture
+- **Convolutional Layers:**
+  - Two 1-dimensional convolutional layers with 32 and 64 filters, respectively, using ReLU activation.
 - **Normalization:**
-  - BatchNormalization after each convolutional block
+  - Batch normalization applied after each convolutional block to improve training stability.
 - **Pooling:**
-  - MaxPooling1D after each convolutional block to reduce spatial dimensions
-  - GlobalAveragePooling1D before fully connected layer
-- **Fully Connected Layer:**
-  - Dense layer with 64 units, followed by Dropout 
-  - Final output layer: 1 unit with sigmoid activation for binary classification
+  - MaxPooling1D applied after each convolutional block to reduce temporal resolution.
+  - GlobalAveragePooling1D used prior to the fully connected layer to reduce overfitting.
+- **Fully Connected Layers:**
+  - A dense layer with 64 units and ReLU activation, followed by dropout for regularization.
+  - A final output layer with a single unit and sigmoid activation for binary seizure classification.
+
+## 2. Unsupervised Clustering (Exploratory Analysis)
+- Notebook: `SeizureClustering.ipynb`
+- An exploratory analysis investigating whether unsupervised clustering methods can reveal structure in EEG windows.
+- This work was conducted earlier in the project and served as an initial exploration of the dataset.
+- The clustering approach requires further refinement and should be revisited to incorporate improved preprocessing, feature extraction, and evaluation strategies.
   
 # Results
 
