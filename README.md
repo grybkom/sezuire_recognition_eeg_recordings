@@ -42,15 +42,16 @@ Andrzejak RG, Lehnertz K, Rieke C, Mormann F, David P, Elger CE (2001) Indicatio
 
 The original dataset can be found at the UCI Machine Learning Repository. The dataset used in this project can be found on Kaggle's platform: https://www.kaggle.com/datasets/harunshimanto/epileptic-seizure-recognition
 
-> :warning: **Important Note Regarding This Dataset**
-> This dataset consists of preprocessed EEG recordings in which the original subject-level structure has been removed.The original data contained recordings from 500 subjects, each segmented into 23 non-overlapping one-second windows, resulting in a total of 11,500 samples. Because explicit subject identifiers are not available, these windows must be treated as independent samples. As a result, multiple samples in the dataset originate from the same individual, but it is not possible to determine which windows belong to which subject. This limitation should be carefully considered when interpreting model performance. Validation results may be optimistic due to potential correlation between samples, and subject-level seizure detection or clinical generalization cannot be reliably assessed using this dataset. Despite these limitations, the dataset is suitable for model development in EEG-based seizure detection.
-
 ## Data Processing and Normalization
 - This project treats the task as a binary classification problem, where seizure activity is labeled as `1` and all non-seizure EEG recordings are collapsed into a single class labeled as `0`.
 - The column `Unnamed` was removed, as it contains non-informative metadata related to the recording session rather than EEG signal content.
 - Each 1-second EEG window was independently z-score normalized to reduce inter-sample amplitude variability. EEG signal magnitude can vary substantially due to non-neuronal factors such as muscle activity, subject movement, cardiac artifacts, electrode placement, and electrode contact quality (Michel & Brunet, 2019). As a result, per-window normalization is appropriate and helps ensure that model learning focuses on temporal signal patterns rather than absolute amplitude.
 
 <img width="1000" height="600" alt="raw_vs_normalized_traces" src="https://github.com/user-attachments/assets/0838094e-3750-431c-b2fa-e65d40352063" />
+
+> :warning: **Important Note Regarding This Dataset**
+> 
+> This dataset consists of preprocessed EEG recordings in which the original subject-level structure has been removed.The original data contained recordings from 500 subjects, each segmented into 23 non-overlapping one-second windows, resulting in a total of 11,500 samples. Because explicit subject identifiers are not available, these windows must be treated as independent samples. As a result, multiple samples in the dataset originate from the same individual, but it is not possible to determine which windows belong to which subject. This limitation should be carefully considered when interpreting model performance. Validation results may be optimistic due to potential correlation between samples, and subject-level seizure detection or clinical generalization cannot be reliably assessed using this dataset. Despite these limitations, the dataset is suitable for model development in EEG-based seizure detection.
 
 # Models
 ## Convolutional Neural Network (CNN)
