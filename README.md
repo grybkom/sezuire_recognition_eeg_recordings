@@ -78,7 +78,7 @@ This repository contains two primary modeling approaches applied to the EEG seiz
 - This work was conducted earlier in the project and served as an initial exploration of the dataset.
 - The clustering approach requires further refinement and should be revisited to incorporate improved preprocessing, feature extraction, and evaluation strategies.
   
-# Results
+# CNN Results
 
 ## Accuracy, Recall, and AUC per Epoch
 <img width="1200" height="500" alt="cnn_model_metrics" src="https://github.com/user-attachments/assets/d21a9f6a-7acb-4d76-b331-603842aa4c6d" />
