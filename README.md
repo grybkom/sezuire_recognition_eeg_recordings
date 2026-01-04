@@ -48,7 +48,7 @@ The original dataset can be found at the UCI Machine Learning Repository. The da
 
 Since subject identifiers are not available, samples need to be treated as independent windows.
 
-The data has been processed so 500 subjects × 23 windows resulting in 11500 samples. Therefore, there are multiple entries from the same subject and it is not possible to determine which entries are from the same subject. This needs to be kept in mind when deriving any clinical implcations from this work and sub-level sezuire detection cannot be accopmished.  
+The data has been processed so 500 subjects × 23 windows resulting in 11500 samples. Therefore, there are multiple entries from the same subject and it is not possible to determine which entries are from the same subject. This needs to be kept in mind when deriving any clinical implications from this work and subject-level sezuire detection cannot be accopmished.  
 
 ## Data Processing and Normalization
 
@@ -57,6 +57,17 @@ The data has been processed so 500 subjects × 23 windows resulting in 11500 sam
 - Each 1-second EEG window was independently z-score normalized to remove scale differences. There is a large amount of variablity in EEG recording amplitude that arise from non-neuronal factors such as muscle activity, movement, cardiac pulse, electrode placement and electrode contact (Michel & Brunet, 2019). Therefore, applying normalization techniques such as z-score normalization is apporopriate. 
 
 <img width="1000" height="600" alt="raw_vs_normalized_traces" src="https://github.com/user-attachments/assets/0838094e-3750-431c-b2fa-e65d40352063" />
+
+# Models
+
+
+# Results
+
+## Accuracy, Recall, and AUC per Epoch
+<img width="1200" height="500" alt="cnn_model_metrics" src="https://github.com/user-attachments/assets/d21a9f6a-7acb-4d76-b331-603842aa4c6d" />
+
+## Confusion Matrix on Model Validation Data
+![cnn_confusion_matrix](https://github.com/user-attachments/assets/3bc9387e-a477-48d3-83f4-79040481024a)
 
 # References
 
