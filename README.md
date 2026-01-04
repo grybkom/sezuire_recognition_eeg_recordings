@@ -1,5 +1,4 @@
 <h1 align="center">Models for Sezuire Recognition from EEG Recordings</h1>
----
 
 # BACKGROUND
 Seizures occur when groups of neurons in the brain abnormally increase their activity and behave erratically. This can result in convulsive movement, strange behaviors and/or sensations. Individuals experiencing chronic seizures are considered to have epilepsy and require medical treatment. These treatments include surgery, medication and lifestyle changes (Epilepsy and Seizures, 2023). Producing accurate models to detect epilepsy could help these individuals.
