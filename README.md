@@ -17,7 +17,6 @@ Electroencephalogram (EEG) is one of the procedures used to diagnose epilepsy. N
 # DATA
 
 ## Attribute Information
-
 The original dataset from the reference consists of 5 different folders, each with 100 files, with each file representing a single subject/person. Each file is a recording of brain activity for 23.6 seconds. The corresponding time-series is sampled into 4097 data points. Each data point is the value of the EEG recording at a different point in time. So we have total 500 individuals with each has 4097 data points for 23.5 seconds.
 
 We divided and shuffled every 4097 data points into 23 chunks, each chunk contains 178 data points for 1 second, and each data point is the value of the EEG recording at a different point in time. So now we have 23 x 500 = 11500 pieces of information(row), each information contains 178 data points for 1 second(column), the last column represents the label y {1,2,3,4,5}.
@@ -39,26 +38,17 @@ y contains the category of the 178-dimensional input vector. Specifically y in {
 All subjects falling in classes 2, 3, 4, and 5 are subjects who did not have epileptic seizure. Only subjects in class 1 have epileptic seizure. Our motivation for creating this version of the data was to simplify access to the data via the creation of a .csv version of it. Although there are 5 classes most authors have done binary classification, namely class 1 (Epileptic seizure) against the rest.
 
 ## Acknowledgements
-
 Andrzejak RG, Lehnertz K, Rieke C, Mormann F, David P, Elger CE (2001) Indications of nonlinear deterministic and finite dimensional structures in time series of brain electrical activity: Dependence on recording region and brain state, Phys. Rev. E, 64, 061907
 
 The original dataset can be found at the UCI Machine Learning Repository. The dataset used in this project can be found on Kaggle's platform: https://www.kaggle.com/datasets/harunshimanto/epileptic-seizure-recognition
 
 > :warning: **Important Note Regarding This Dataset**
-
-> This dataset consists of preprocessed EEG recordings in which the original subject-level structure has been removed.The original data contained recordings from 500 subjects, each segmented into 23 non-overlapping one-second windows, resulting in a total of 11,500 samples.
-
-> Because explicit subject identifiers are not available, these windows must be treated as independent samples. As a result, multiple samples in the dataset originate from the same individual, but it is not possible to determine which windows belong to which subject.
-
->This limitation should be carefully considered when interpreting model performance. Validation results may be optimistic due to potential correlation between samples, and subject-level seizure detection or clinical generalization cannot be reliably assessed using this dataset.
-
-> Despite these limitations, the dataset is suitable for exploratory modeling and development in EEG-based seizure detection.
+> This dataset consists of preprocessed EEG recordings in which the original subject-level structure has been removed.The original data contained recordings from 500 subjects, each segmented into 23 non-overlapping one-second windows, resulting in a total of 11,500 samples. Because explicit subject identifiers are not available, these windows must be treated as independent samples. As a result, multiple samples in the dataset originate from the same individual, but it is not possible to determine which windows belong to which subject. This limitation should be carefully considered when interpreting model performance. Validation results may be optimistic due to potential correlation between samples, and subject-level seizure detection or clinical generalization cannot be reliably assessed using this dataset. Despite these limitations, the dataset is suitable for model development in EEG-based seizure detection.
 
 ## Data Processing and Normalization
-
-- Initially, this project will treat this as a binary classsifaction model and the four categories without sezuire activity will be collapsed into one category and assigned the label '0' under the 'y' category.
-- The column 'Unnamed' was dropped since it contains irrelevent metadata from the recording session.
-- Each 1-second EEG window was independently z-score normalized to remove scale differences. There is a large amount of variablity in EEG recording amplitude that arise from non-neuronal factors such as muscle activity, movement, cardiac pulse, electrode placement and electrode contact (Michel & Brunet, 2019). Therefore, applying normalization techniques such as z-score normalization is apporopriate. 
+- This project treats the task as a binary classification problem, where seizure activity is labeled as `1` and all non-seizure EEG recordings are collapsed into a single class labeled as `0`.
+- The column `Unnamed` was removed, as it contains non-informative metadata related to the recording session rather than EEG signal content.
+- Each 1-second EEG window was independently z-score normalized to reduce inter-sample amplitude variability. EEG signal magnitude can vary substantially due to non-neuronal factors such as muscle activity, subject movement, cardiac artifacts, electrode placement, and electrode contact quality (Michel & Brunet, 2019). As a result, per-window normalization is appropriate and helps ensure that model learning focuses on temporal signal patterns rather than absolute amplitude.
 
 <img width="1000" height="600" alt="raw_vs_normalized_traces" src="https://github.com/user-attachments/assets/0838094e-3750-431c-b2fa-e65d40352063" />
 
@@ -88,3 +78,7 @@ The confusion matrix indicates that the model misclassified only 11 out of 460 s
 Epilepsy and Seizures. (2023, August 15). National Institute of Neurological Disorders and Stroke. Retrieved October 11, 2023, from https://www.ninds.nih.gov/health-information/disorders/epilepsy-and-seizures
 
 Michel, M., & Brunet, D. (2019). EEG Source Imaging: A Practical Review of the Analysis Steps. Frontiers in Neurology, 10, 325. https://doi.org/10.3389/fneur.2019.00325
+
+# Author
+
+Michael Grybko - GitHub username: grybkom
