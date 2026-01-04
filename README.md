@@ -46,21 +46,30 @@ The original dataset can be found at the UCI Machine Learning Repository. The da
 
 ## Important Note Regarding This Dataset
 
-Since subject identifiers are not available, samples need to be treated as independent windows.
+Since subject identifiers are not available, samples are treated as independent windows.
 
 The data has been processed so 500 subjects × 23 windows resulting in 11500 samples. Therefore, there are multiple entries from the same subject and it is not possible to determine which entries are from the same subject. This needs to be kept in mind when deriving any clinical implications from this work and subject-level sezuire detection cannot be accopmished.  
 
 ## Data Processing and Normalization
 
-- Initially, this project will treat this as a binary classsifaction model and the four categories without sezuire activity will be collapsed into one category and assigned the label '0' under the 'y' category. The 
-
+- Initially, this project will treat this as a binary classsifaction model and the four categories without sezuire activity will be collapsed into one category and assigned the label '0' under the 'y' category.
+- The column 'Unnamed' was dropped since it contains irrelevent metadata from the recording session.
 - Each 1-second EEG window was independently z-score normalized to remove scale differences. There is a large amount of variablity in EEG recording amplitude that arise from non-neuronal factors such as muscle activity, movement, cardiac pulse, electrode placement and electrode contact (Michel & Brunet, 2019). Therefore, applying normalization techniques such as z-score normalization is apporopriate. 
 
 <img width="1000" height="600" alt="raw_vs_normalized_traces" src="https://github.com/user-attachments/assets/0838094e-3750-431c-b2fa-e65d40352063" />
 
 # Models
-
-
+## Convolutional Neural Network (CNN)
+- **Convolutional Layers:** 2 1-dimensional convolutional layers with 32 then 64 units and relu acrivation
+- **Normalization:**
+  - BatchNormalization after each convolutional block
+- **Pooling:**
+  - MaxPooling1D after each convolutional block to reduce spatial dimensions
+  - GlobalAveragePooling1D before fully connected layer
+- **Fully Connected Layer:**
+  - Dense layer with 64 units, followed by Dropout 
+  - Final output layer: 1 unit with sigmoid activation for binary classification
+  
 # Results
 
 ## Accuracy, Recall, and AUC per Epoch
