@@ -44,10 +44,14 @@ Andrzejak RG, Lehnertz K, Rieke C, Mormann F, David P, Elger CE (2001) Indicatio
 
 The original dataset can be found at the UCI Machine Learning Repository. The dataset used in this project can be found on Kaggle's platform: https://www.kaggle.com/datasets/harunshimanto/epileptic-seizure-recognition
 
-> :warning: **Important Note Regarding This Dataset**  
+> :warning: **Important Note Regarding This Dataset**
+
 > This dataset consists of preprocessed EEG recordings in which the original subject-level structure has been removed.The original data contained recordings from 500 subjects, each segmented into 23 non-overlapping one-second windows, resulting in a total of 11,500 samples.
+
 > Because explicit subject identifiers are not available, these windows must be treated as independent samples. As a result, multiple samples in the dataset originate from the same individual, but it is not possible to determine which windows belong to which subject.
+
 >This limitation should be carefully considered when interpreting model performance. Validation results may be optimistic due to potential correlation between samples, and subject-level seizure detection or clinical generalization cannot be reliably assessed using this dataset.
+
 > Despite these limitations, the dataset is suitable for exploratory modeling and development in EEG-based seizure detection.
 
 ## Data Processing and Normalization
