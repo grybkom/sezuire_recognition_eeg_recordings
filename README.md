@@ -53,7 +53,7 @@ The original dataset can be found at the UCI Machine Learning Repository. The da
 > 
 > This dataset consists of preprocessed EEG recordings in which the original subject-level structure has been removed.The original data contained recordings from 500 subjects, each segmented into 23 non-overlapping one-second windows, resulting in a total of 11,500 samples. Because explicit subject identifiers are not available, these windows must be treated as independent samples. As a result, multiple samples in the dataset originate from the same individual, but it is not possible to determine which windows belong to which subject. This limitation should be carefully considered when interpreting model performance. Validation results may be optimistic due to potential correlation between samples, and subject-level seizure detection or clinical generalization cannot be reliably assessed using this dataset. Despite these limitations, the dataset is suitable for model development in EEG-based seizure detection.
 
-# Models
+# MODELS
 This repository contains two primary modeling approaches applied to the EEG seizure dataset.
 ## 1. Convolutional Neural Network (CNN) (Primary Model)
 - Notebook: `eeg_seizure_recognition.ipynb`
@@ -78,7 +78,7 @@ This repository contains two primary modeling approaches applied to the EEG seiz
 - This work was conducted earlier in the project and served as an initial exploration of the dataset.
 - The clustering approach requires further refinement and should be revisited to incorporate improved preprocessing, feature extraction, and evaluation strategies.
   
-# CNN Results
+# CNN RESULTS
 
 ## Accuracy, Recall, and AUC per Epoch
 <img width="1200" height="500" alt="cnn_model_metrics" src="https://github.com/user-attachments/assets/07364251-004e-44c2-9b5b-a695faf35d26" />
@@ -93,7 +93,7 @@ The confusion matrix indicates that the model misclassified only 24 out of 460 s
 <img width="429" height="518" alt="image" src="https://github.com/user-attachments/assets/1d923d4f-758c-405c-8a4f-bb2c9ea117fa" />
 
 
-# References
+# REFERENCES
 
 Epilepsy and Seizures. (2023, August 15). National Institute of Neurological Disorders and Stroke. Retrieved October 11, 2023, from https://www.ninds.nih.gov/health-information/disorders/epilepsy-and-seizures
 
