@@ -89,7 +89,7 @@ This repository contains two primary modeling approaches applied to the EEG seiz
 The confusion matrix indicates that the model misclassified only 24 out of 460 seizure instances as non-seizure (false negatives), while 2 out of 1,840 non-seizure instances were incorrectly classified as seizures (false positives). This corresponds to a high recall for seizure detection, which is particularly important in clinical applications where minimizing missed seizures is critical.
 
 
-## Table Of Errors with Predicted Probabilities
+## Table of Errors with Predicted Probabilities
 <img width="429" height="518" alt="image" src="https://github.com/user-attachments/assets/1d923d4f-758c-405c-8a4f-bb2c9ea117fa" />
 
 
