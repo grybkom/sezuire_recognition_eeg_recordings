@@ -5,7 +5,7 @@ Seizures occur when groups of neurons in the brain abnormally increase their act
 
 Electroencephalogram (EEG) is one of the procedures used to diagnose epilepsy. Neurons function through the controlled movement of ions such as clacium, sodium, potassium and chloride, which produces electrical currents. The EEG device rests on top of the head and uses small electrodes that can detect electrical signals emitted by groups of neurons (Michel & Brunet, 2019). The data produced is voltage changes over time. It should be noted that EEG results alone are not enough to diagnose epilepsy, and that an EEG can only detect neuronal activity at the surface layers of the brain, not in deeper structures (Epilepsy and Seizures, 2023).
 
-# Language
+# LANGUAGE
 - Python
   - [NumPy](https://numpy.org/)
   - [pandas](https://pandas.pydata.org/)
