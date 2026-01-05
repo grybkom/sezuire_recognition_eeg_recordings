@@ -81,12 +81,13 @@ This repository contains two primary modeling approaches applied to the EEG seiz
 # CNN Results
 
 ## Accuracy, Recall, and AUC per Epoch
-<img width="1200" height="500" alt="cnn_model_metrics" src="https://github.com/user-attachments/assets/d21a9f6a-7acb-4d76-b331-603842aa4c6d" />
+![cnn_confusion_matrix](https://github.com/user-attachments/assets/bb00c6c7-8e38-407e-a91d-e187c1f40749)
 
 ## Confusion Matrix on Model Validation Data
-The confusion matrix indicates that the model misclassified only 11 out of 460 seizure instances as non-seizure (false negatives), while 8 out of 1,840 non-seizure instances were incorrectly classified as seizures (false positives). This corresponds to a high recall for seizure detection, which is particularly important in clinical applications where minimizing missed seizures is critical.
+The confusion matrix indicates that the model misclassified only 24 out of 460 seizure instances as non-seizure (false negatives), while 2 out of 1,840 non-seizure instances were incorrectly classified as seizures (false positives). This corresponds to a high recall for seizure detection, which is particularly important in clinical applications where minimizing missed seizures is critical.
 ![cnn_confusion_matrix](https://github.com/user-attachments/assets/3bc9387e-a477-48d3-83f4-79040481024a)
 
+## Table Of Errors with Predicted Probabilities
 <img width="429" height="518" alt="image" src="https://github.com/user-attachments/assets/1d923d4f-758c-405c-8a4f-bb2c9ea117fa" />
 
 
